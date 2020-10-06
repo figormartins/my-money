@@ -1,10 +1,10 @@
 import React from 'react'
+import { Table } from 'react-bootstrap';
 import { Link } from 'react-router-dom'
 import Rest from '../../utils/rest'
 
 const baseURL = 'https://mymoney-figormartins.firebaseio.com/'
 const { useGet } = Rest(baseURL)
-
 
 const Meses = () => {
   const data = useGet('meses')
@@ -17,7 +17,7 @@ const Meses = () => {
 
   if (Object.keys(data.data).length > 0) {
     return (
-      <table className='table'>
+      <Table striped bordered hover size="sm">
         <thead>
           <tr>
             <th>Mês</th>
@@ -44,7 +44,7 @@ const Meses = () => {
               })
           }
         </tbody>
-      </table>
+      </Table>
     )
   }
 
