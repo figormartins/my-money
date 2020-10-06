@@ -1,4 +1,5 @@
 import React from 'react'
+import { Table } from 'react-bootstrap';
 import Rest from '../utils/rest'
 
 const baseURL = 'https://mymoney-figormartins.firebaseio.com/'
@@ -9,8 +10,8 @@ const Movimentacoes = (props) => {
 
   return (
     <div className='container'>
-      <h1>Movimentações</h1>
-      <table className='table'>
+      <h2>Movimentações</h2>
+      <Table striped bordered hover size="sm">
         <thead>
           <tr>
             <th>Descrição</th>
@@ -32,7 +33,7 @@ const Movimentacoes = (props) => {
               })
           }
         </tbody>
-      </table>
+      </Table>
     </div>
   )
 }
